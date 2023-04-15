@@ -1,0 +1,53 @@
+{
+  "name": "@withtest/library2",
+  "version": "0.0.0",
+  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "scripts": {
+    "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "lint": "eslint .",
+    "npm:publish": "pnpm publish",
+    "prepack": "pnpm build",
+    "type:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@withtest/babel": "*",
+    "@withtest/eslint": "*",
+    "@withtest/library1": "0.0.0",
+    "@withtest/rollup": "*",
+    "@withtest/tsconfig": "*",
+    "eslint": "^8.33.0",
+    "rollup": "^3.5.1",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "@withtest/library1": "0.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "module": "esm/index.mjs",
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    },
+    "types": "dist/index.d.ts",
+    "import": "esm/index.mjs"
+  }
+}

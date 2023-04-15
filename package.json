@@ -1,0 +1,23 @@
+{
+  "name": "monorepo-libraries-changeset-test",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@8.1.1",
+  "workspaces": [
+    "configs/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "lint": "turbo run lint",
+    "npm:publish": "turbo run npm:publish",
+    "type:check": "turbo run type:check --parallel"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "turbo": "latest",
+    "typescript": "^4.9.4"
+  }
+}
