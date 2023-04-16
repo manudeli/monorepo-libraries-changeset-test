@@ -1,6 +1,6 @@
 {
   "name": "@withtest/library2",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "sideEffects": false,
   "exports": {
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@withtest/babel": "*",
     "@withtest/eslint": "*",
-    "@withtest/library1": "0.0.0",
+    "@withtest/library1": "0.1.0",
     "@withtest/rollup": "*",
     "@withtest/tsconfig": "*",
     "eslint": "^8.33.0",
